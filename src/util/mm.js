@@ -12,7 +12,7 @@ var _mm = {
             data: param.data || '',
             success: function(res) {
                 if(0 === res.status) {
-                    typeof param.success === 'function' && param.success(res.data);
+                    typeof param.success === 'function' && param.success(res.data, res.msg);
                 } else if(10 === res.status) {
                     _this.doLogin();
                 } else if(1 === res.status) {
@@ -27,7 +27,7 @@ var _mm = {
         })
     },
     doLogin: function() {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     // 获取服务器地址
     getServerUrl: function(path) {
