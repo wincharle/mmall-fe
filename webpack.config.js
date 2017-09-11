@@ -24,10 +24,13 @@ config = {
     //     contentBase: './dist/view',
     //     inline: true,
     //     historyApiFallback: true,
-    //     open: true
+    //     open: true,
+    //     publicPath: '/dist/'
     // },
     entry: {    
         'index': './src/page/index/index.js',
+        'list': './src/page/list/index.js',
+        'detail': './src/page/detail/index.js',
         'user-login': './src/page/user-login/index.js',
         'user-register': './src/page/user-register/index.js',
         'user-pass-reset': './src/page/user-pass-reset/index.js',
@@ -39,7 +42,7 @@ config = {
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/dist',
+        publicPath: '/dist/',
         filename: 'js/[name].js'
     },
     externals: {
@@ -88,6 +91,8 @@ config = {
             filename: 'css/[name].css'
         }),
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
