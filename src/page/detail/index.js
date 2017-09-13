@@ -61,7 +61,7 @@ var page = {
         $(document).on('click', '.cart-add', function(){
             _cart.addToCart({
                 productId: _this.data.productId,
-                count: $('.p-count').val()
+                count: parseInt($('.p-count').val())
             }, function(res){
                 window.location.href = './result.html?type=cart-add';
             }, function(errMsg){
