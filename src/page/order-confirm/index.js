@@ -34,7 +34,7 @@ var page = {
                 _order.createOrder({
                     shippingId: shippingId
                 }, function(res){
-                    window.loacation.href = './payment.html?orderNumber=' + res.orderNo;
+                    window.location.href = './payment.html?orderNumber=' + res.orderNo;
                 }, function(errMsg){
                     _mm.errorTips(errMsg);
                 })
