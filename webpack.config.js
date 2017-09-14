@@ -11,6 +11,7 @@ var getHtmlConfig = function(name, title) {
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        favicon: './favicon.ico',
         title: title,
         inject: true,
         hash: true,
